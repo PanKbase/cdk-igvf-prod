@@ -10,7 +10,7 @@
         "DownloadIgvfFilesPolicy7962BB8F": {
             "Properties": {
                 "Description": "",
-                "ManagedPolicyName": "download-igvf-files",
+                "ManagedPolicyName": "download-pankbase-files",
                 "Path": "/",
                 "PolicyDocument": {
                     "Statement": [
@@ -18,7 +18,7 @@
                             "Action": [
                                 "s3:GetObjectVersion",
                                 "s3:GetObject",
-                                "s3:GetBucketAcl",
+                                's3:GetBucketAcl',
                                 "s3:ListBucket",
                                 "s3:GetBucketLocation"
                             ],
@@ -64,7 +64,7 @@
         "UploadIgvfFilesPolicyE468DEF2": {
             "Properties": {
                 "Description": "",
-                "ManagedPolicyName": "upload-igvf-files",
+                "ManagedPolicyName": "upload-pankbase-files",
                 "Path": "/",
                 "PolicyDocument": {
                     "Statement": [
@@ -73,7 +73,7 @@
                                 "s3:PutObject",
                                 "s3:GetObjectVersion",
                                 "s3:GetObject",
-                                "s3:GetBucketAcl",
+                                's3:GetBucketAcl',
                                 "s3:ListBucket",
                                 "s3:GetBucketLocation"
                             ],
@@ -132,7 +132,7 @@
                         "Ref": "UploadIgvfFilesPolicyE468DEF2"
                     }
                 ],
-                "UserName": "upload-igvf-files"
+                "UserName": "upload-pankbase-files"
             },
             "Type": "AWS::IAM::User"
         },
@@ -147,7 +147,7 @@
         "UploadIgvfFilesUserAccessKeySecret49A5A8C8": {
             "DeletionPolicy": "Delete",
             "Properties": {
-                "Name": "upload-igvf-files-user-access-key-secret",
+                "Name": "upload-pankbase-files-user-access-key-secret",
                 "SecretString": {
                     "Fn::Join": [
                         "",

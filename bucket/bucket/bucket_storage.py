@@ -10,15 +10,17 @@ from aws_cdk.aws_s3 import Bucket
 from aws_cdk.aws_s3 import CorsRule
 from aws_cdk.aws_s3 import HttpMethods
 
+from aws_cdk.aws_s3 import ObjectOwnership  # Ensure ObjectOwnership is imported
 from constructs import Construct
 
 from typing import Any
 from typing import List
 
 
-BLOBS_BUCKET_NAME = 'igvf-blobs'
-FILES_BUCKET_NAME = 'igvf-files'
-
+BLOBS_BUCKET_NAME = 'pankbase-blobs'
+FILES_BUCKET_NAME = 'pankbase-files'
+BLOBS_BUCKET_NAME_LOGS = 'pankbase-blobs-log'
+FILES_BUCKET_NAME_LOGS = 'pankbase-files-log'
 
 BROWSER_UPLOAD_CORS = CorsRule(
     allowed_methods=[
@@ -95,7 +97,7 @@ class BucketStorage(Stack):
         self.blobs_logs_bucket = Bucket(
             self,
             'BlobsLogsBucket',
-            bucket_name=f'{BLOBS_BUCKET_NAME}-logs',
+            bucket_name=f'{BLOBS_BUCKET_NAME_LOGS}',
             removal_policy=RemovalPolicy.RETAIN,
         )
 
@@ -107,7 +109,7 @@ class BucketStorage(Stack):
                 CORS
             ],
             removal_policy=RemovalPolicy.RETAIN,
-            server_access_logs_bucket=self.blobs_logs_bucket,
+            #server_access_logs_bucket=self.blobs_logs_bucket,
             versioned=True,
         )
 
@@ -130,7 +132,7 @@ class BucketStorage(Stack):
         self.files_logs_bucket = Bucket(
             self,
             'FilesLogsBucket',
-            bucket_name=f'{FILES_BUCKET_NAME}-logs',
+            bucket_name=f'{FILES_BUCKET_NAME_LOGS}',
             removal_policy=RemovalPolicy.RETAIN,
         )
 
@@ -143,7 +145,7 @@ class BucketStorage(Stack):
                 CORS
             ],
             removal_policy=RemovalPolicy.RETAIN,
-            server_access_logs_bucket=self.files_logs_bucket,
+            #server_access_logs_bucket=self.files_logs_bucket,
             versioned=True,
         )
 

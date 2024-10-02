@@ -1,4 +1,4 @@
 config = {
-    'account': '035226225042',
+    'account': '495599754696',
     'region': 'us-west-2',
 }
