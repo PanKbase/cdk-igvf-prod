@@ -17,10 +17,10 @@ from typing import Any
 from typing import List
 
 
-BLOBS_BUCKET_NAME = 'pankbase-blobs'
-FILES_BUCKET_NAME = 'pankbase-files'
-BLOBS_BUCKET_NAME_LOGS = 'pankbase-blobs-log-production'
-FILES_BUCKET_NAME_LOGS = 'pankbase-files-production-log'
+BLOBS_BUCKET_NAME = 'pankbase-blobs-2026'
+FILES_BUCKET_NAME = 'pankbase-files-2026'
+BLOBS_BUCKET_NAME_LOGS = 'pankbase-blobs-log-production-2026'
+FILES_BUCKET_NAME_LOGS = 'pankbase-files-production-log-2026'
 
 BROWSER_UPLOAD_CORS = CorsRule(
     allowed_methods=[

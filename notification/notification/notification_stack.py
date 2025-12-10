@@ -18,7 +18,7 @@ class NotificationStack(cdk.Stack):
         self.aws_igvf_prod_channel: SlackChannelConfiguration = SlackChannelConfiguration(
             self,
             'AwsIgvfProdChannel',
-            slack_channel_configuration_name='aws-pankbase-prod',
+            slack_channel_configuration_name='aws-pankbase-prod-2026',
             slack_workspace_id='T074YEUTZAR',
             slack_channel_id='C07PWQ08K3Q',
         )

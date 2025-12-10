@@ -16,7 +16,7 @@ from typing import Any
 from typing import List
 
 
-RESTRICTED_FILES_BUCKET_NAME = 'pankbase-restricted-files'
+RESTRICTED_FILES_BUCKET_NAME = 'pankbase-restricted-files-2026'
 
 
 BROWSER_UPLOAD_CORS = CorsRule(
